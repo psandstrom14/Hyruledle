@@ -138,32 +138,33 @@ Each guess shows feedback across these traits:
 
 ## Data Pipeline (Current Phase)
 
-### Step 1: Fetch Games (automated)
-- Hit `/api/games` endpoint.
-- Build a lookup table: `{game_api_id: {name, release_year}}`.
-- Output: `games.json`.
+### Step 1: Raw Ingest — `ingest_zelda_api.py` (automated)
+- Fetches all 32 games from `/api/games`, builds a lookup table `{game_api_id: {name, release_year}}`.
+- Paginates through `/api/characters`, deep-fetches each entry, resolves `appearances` URLs against the games lookup.
+- **No filtering or caps** — collects everything the API returns.
+- Output: `data/games.json`, `data/characters_raw.json`.
 
-### Step 2: Fetch Characters (automated)
-- Hit `/api/characters` endpoint (paginated).
-- For each character, resolve `appearances` URLs against the games lookup.
-- Determine `first_appearance` by sorting resolved games by release year.
-- Output: `characters_raw.json`.
+### Step 2: Heuristic Classification — `classify_characters.py` (automated)
+- Reads `data/characters_raw.json` and runs cheap signal checks on each entry.
+- Flags entries that look like generic roles, items, enemies, or concepts — does **not** remove anything.
+- Heuristics include: proper noun check, generic role pattern matching, enemy/item keyword detection, missing race/gender.
+- Output: `data/characters_flagged.csv` with `auto_flag`, `flag_reason`, and a blank `keep` column for human review.
 
 ### Step 3: Manual Curation (human-in-the-loop)
-- Export to CSV or edit in spreadsheet.
-- **Cut** non-characters (e.g., "Ancient Oven", "Angler Fish").
+- Open `data/characters_flagged.csv` in a spreadsheet.
+- Review flagged entries, fill in the `keep` column (`yes`/`no`).
 - **Fill** null `race` and `gender` values.
 - **Add** `role` field (Hero / Villain / Ally / NPC — does not exist in API).
 - **Select** final ~80-100 roster.
-- Output: `characters_curated.csv`.
+- Output: `data/characters_curated.csv`.
 
 ### Step 4: Validate & Merge (automated)
-- Python script reads `characters_curated.csv` + `characters_raw.json`.
+- Python script reads `data/characters_curated.csv` + `data/characters_raw.json`.
 - Validates no nulls in required fields, enum values are valid.
-- Output: `zelda_characters_final.json`.
+- Output: `data/zelda_characters_final.json`.
 
 ### Step 5: Load into Database (Django management command)
-- Reads `zelda_characters_final.json`.
+- Reads `data/zelda_characters_final.json`.
 - Upserts games, inserts characters, inserts character_games join rows.
 - Computes and stores derived fields.
 - Repeatable and idempotent — can wipe and reload anytime.
@@ -248,11 +249,13 @@ Templates just render the comparison result with colors/arrows.
 ```
 Hyruledle/
 ├── README.md
-├── ingest_zelda_api.py          # Current ingestion script
+├── ingest_zelda_api.py          # Stage 1: Raw API ingestion (no filtering)
+├── classify_characters.py       # Stage 2: Heuristic auto-classification
 ├── data/
 │   ├── games.json               # Raw games from API
 │   ├── characters_raw.json      # Raw characters with resolved games
-│   ├── characters_curated.csv   # Manual curation file
+│   ├── characters_flagged.csv   # Auto-classified, ready for human review
+│   ├── characters_curated.csv   # Manual curation file (keep/cut decisions)
 │   └── zelda_characters_final.json  # Clean, validated, ready to load
 ├── hyruledle/                   # Django project (future)
 │   ├── manage.py
@@ -283,8 +286,13 @@ source venv/bin/activate
 # Install dependencies
 pip install requests
 
-# Run ingestion pipeline
-python ingest_zelda_api.py
+# Stage 1: Fetch raw data from Zelda Fan API
+python3 ingest_zelda_api.py
+
+# Stage 2: Run heuristic classifier
+python3 classify_characters.py
+
+# Stage 3: Open data/characters_flagged.csv and curate manually
 ```
 
 ---
@@ -292,9 +300,10 @@ python ingest_zelda_api.py
 ## Current Status
 
 - [x] Virtual environment setup
-- [x] Initial ingestion script (`ingest_zelda_api.py`) with Three Gates filtering
-- [ ] Refactor pipeline: separate games fetch + character fetch + join
-- [ ] Manual curation pass (CSV)
+- [x] Raw ingestion script (`ingest_zelda_api.py`) — games fetch + full character fetch + appearance resolution
+- [x] Heuristic classifier (`classify_characters.py`) — auto-flags generic roles, items, enemies, concepts
+- [ ] Run full pipeline and generate `characters_flagged.csv`
+- [ ] Manual curation pass (spreadsheet review of flagged CSV)
 - [ ] Validation/merge script
 - [ ] Django project scaffolding
 - [ ] Database schema + management command

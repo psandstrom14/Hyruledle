@@ -1,1 +1,15 @@
 venv/
+__pycache__/
+*.pyc
+
+# Generated data files (re-generate with pipeline scripts)
+data/games.json
+data/characters_raw.json
+data/characters_flagged.csv
+
+# Keep curated/final files in version control
+# data/characters_curated.csv
+# data/zelda_characters_final.json
+
+# Old output from previous script version
+zelda_data_deep.json
