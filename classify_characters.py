@@ -69,7 +69,7 @@ def has_item_signal(description):
 
 
 def classify(character):
-    """Run all heuristics and return (auto_flag, reasons) tuple."""
+    """Run all heuristics and return (auto_flag, reasons, keep_suggestion) tuple."""
     name = character["name"]
     race = (character.get("race") or "").lower().strip()
     gender = character.get("gender")
@@ -103,7 +103,58 @@ def classify(character):
         flags.append("minimal_description")
 
     auto_flag = len(flags) > 0
-    return auto_flag, "; ".join(flags)
+    reasons = "; ".join(flags)
+
+    # --- High-level keep suggestion ---------------------------------------
+    #
+    # We want to approximate "is this a specific, named narrative character"
+    # using objective signals, so you aren't relying on personal memory.
+    #
+    # Heuristics (ordered from strongest to weakest):
+    #
+    # - Strong keep:
+    #   - Has at least 1 game appearance
+    #   - Has a reasonably long description
+    #   - Name looks like a proper name
+    #   - Not obviously a generic role, enemy, or item
+    #
+    # - Strong cut:
+    #   - No games at all
+    #   - Or clearly an item/enemy/generic role
+    #
+    # - Review:
+    #   - Everything in between (borderline / ambiguous)
+
+    desc_len = len(description or "")
+    generic_role = matches_patterns(name, GENERIC_ROLE_PATTERNS)
+    enemy_like = has_enemy_signal(description)
+    item_like = has_item_signal(description)
+    proper = is_proper_name(name)
+
+    keep_suggestion = "review"
+
+    # Strong keep
+    if (
+        game_count >= 1
+        and desc_len >= 120
+        and proper
+        and not generic_role
+        and not enemy_like
+        and not item_like
+    ):
+        keep_suggestion = "yes"
+
+    # Strong cut
+    if (
+        game_count == 0
+        or generic_role
+        or enemy_like
+        or item_like
+        or (not proper and desc_len < 200)
+    ):
+        keep_suggestion = "no"
+
+    return auto_flag, reasons, keep_suggestion
 
 
 def run():
@@ -119,7 +170,7 @@ def run():
     flagged_count = 0
 
     for char in characters:
-        auto_flag, reasons = classify(char)
+        auto_flag, reasons, keep_suggestion = classify(char)
         if auto_flag:
             flagged_count += 1
 
@@ -134,16 +185,24 @@ def run():
             "description_preview": (char.get("description", ""))[:150],
             "auto_flag": auto_flag,
             "flag_reason": reasons,
-            "keep": "",  # Left blank for human curation
+            "keep_suggested": keep_suggestion,
+            "keep": keep_suggestion,  # Pre-filled for you; override as needed
         })
 
-    # Sort: unflagged first (likely good candidates), then flagged
-    rows.sort(key=lambda r: (r["auto_flag"], -r["game_count"], r["name"]))
+    # Sort: suggested keeps first, then review, then cuts; within that, by game_count
+    sort_key_order = {"yes": 0, "review": 1, "no": 2}
+    rows.sort(
+        key=lambda r: (
+            sort_key_order.get(r["keep_suggested"], 1),
+            -r["game_count"],
+            r["name"],
+        )
+    )
 
     fieldnames = [
         "name", "race", "gender", "first_appearance", "first_appearance_year",
         "game_count", "game_names", "description_preview",
-        "auto_flag", "flag_reason", "keep",
+        "auto_flag", "flag_reason", "keep_suggested", "keep",
     ]
 
     with open('data/characters_flagged.csv', 'w', newline='') as f:
