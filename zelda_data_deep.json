@@ -1,0 +1,902 @@
+[
+    {
+        "name": "Anjean",
+        "race": "Lokomo",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 1,
+        "description": "Anjean  is a character in Spirit Tracks. She is a member of the Lokomo people and the protector of the Tower of Spirits, the central hub of the Spirit Tracks, whose goal is to prevent the evil Malladus from breaking free of his imprisonment. Anjean p..."
+    },
+    {
+        "name": "Animal Companion",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Oracle of Seasons",
+        "first_appearance_year": 2001,
+        "game_count": 2,
+        "description": "The Animal Companions are three characters in Oracle of Seasons and Oracle of Ages: Ricky, Moosh, and Dimitri. They become Link's Mounts when he needs their special abilities to traverse certain terrain. "
+    },
+    {
+        "name": "Angler Fish",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Link's Awakening",
+        "first_appearance_year": 1993,
+        "game_count": 2,
+        "description": "The Angler Fish is a recurring Boss in The Legend of Zelda series. "
+    },
+    {
+        "name": "Carben",
+        "race": "Lokomo",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 1,
+        "description": "Carben is a character from Spirit Tracks. He is a member of the Lokomo race and Guardian of the Ocean Realm who resides in the Ocean Sanctuary. Like the rest of the Lokomo people, Carben possesses a sacred instrument, his being the flute, which gener..."
+    },
+    {
+        "name": "Captain Stalfos",
+        "race": "Pirate",
+        "gender": null,
+        "first_appearance": "Freshly-Picked Tingle's Rosy Rupeeland",
+        "first_appearance_year": 2006,
+        "game_count": 1,
+        "description": "Captain Stalfos is a boss in Freshly-Picked Tingle's Rosy Rupeeland. He is the leader of the group of Pirates. In order for Tingle to join the pirate crew, he has to be dead. If he wants to survive, he must defeat the captain in a sword duel. If Ting..."
+    },
+    {
+        "name": "Champion",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Breath of the Wild",
+        "first_appearance_year": 2017,
+        "game_count": 1,
+        "description": "The Champions are a team of five chosen from the five races of Hyrule to battle against Calamity Ganon. Led by Princess Zelda with the Champion hero chosen by the sword that seals the darkness at her side, the other four Champions were tasked with pi..."
+    },
+    {
+        "name": "Mad Batter",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: A Link to the Past",
+        "first_appearance_year": 1992,
+        "game_count": 2,
+        "description": "The Mad Batter is a recurring character in The Legend of Zelda series. He sleeps in altars found in underground caves, and Link may awaken him by sprinkling Magic Powder on these altars. The bat creature will then curse Link to punish him for having ..."
+    },
+    {
+        "name": "Roam",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Roam is a character featured in the A Link to the Past comic by Shotaro Ishinomori by Shotaro Ishinomori. Referred to in one of the chapters as \"The Mystery Knight,\" Roam is a descendant of a master archer from the ranks of the Knights of Hyrule. Whe..."
+    },
+    {
+        "name": "Linkle",
+        "race": "Hylian",
+        "gender": "Female",
+        "first_appearance": "Hyrule Warriors Legends",
+        "first_appearance_year": 2016,
+        "game_count": 1,
+        "description": "Linkle is a playable Warrior in Hyrule Warriors Legends. She can be transferred over to Hyrule Warriors as well. She wields dual Crossbows as her weapon and uses them alongside quick kicks to attack enemies. Her story is described as a side story sep..."
+    },
+    {
+        "name": "Lion",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 2,
+        "description": "Lions are a recurring species in The Legend of Zelda series. "
+    },
+    {
+        "name": "Linebeck III",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 1,
+        "description": "Linebeck III is a character in Spirit Tracks. He is the grandson of Linebeck and the owner of the Linebeck Trading Company, operating at a location called the Trading Post. He'll buy Link's collected treasure from him, and also trade treasure for tra..."
+    },
+    {
+        "name": "Letter",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 8,
+        "description": "Letters are recurring items and objects in The Legend of Zelda series. They are the most common means of long-distance communication between characters. "
+    },
+    {
+        "name": "Ravio",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: A Link Between Worlds",
+        "first_appearance_year": 2013,
+        "game_count": 1,
+        "description": "Ravio is a character in A Link Between Worlds. Originally a resident of the kingdom of Lorule, he spends a vast majority of the game posing as a simple shopkeeper in Hyrule, renting various items to his Hyrulean counterpart Link in order to help him ..."
+    },
+    {
+        "name": "Queen Ambi",
+        "race": "Human",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: Oracle of Seasons",
+        "first_appearance_year": 2001,
+        "game_count": 2,
+        "description": "Queen Ambi is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Joel",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 2,
+        "description": "Joel is a recurring character in the The Legend of Zelda series. "
+    },
+    {
+        "name": "Mako",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 3,
+        "description": "Mako is a recurring character in The Legend of Zelda series. He is a member of Tetra's Pirate Crew. He has a rather limited role as he rarely ever speaks. "
+    },
+    {
+        "name": "Lana",
+        "race": "Hylian",
+        "gender": "Female",
+        "first_appearance": "Hyrule Warriors",
+        "first_appearance_year": 2014,
+        "game_count": 1,
+        "description": "Lana is a playable Warrior in Hyrule Warriors. She is a sorceress with light-blue hair armed with a book of magic that she uses to cast barriers to disperse enemies. She is described as a very energetic girl with a vast knowledge of magic and monster..."
+    },
+    {
+        "name": "Stockwell",
+        "race": "Human",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Oracle of Seasons",
+        "first_appearance_year": 2001,
+        "game_count": 3,
+        "description": "Stockwell is a recurring character in the The Legend of Zelda series. He is a shopkeeper and proprietor. "
+    },
+    {
+        "name": "Laruto",
+        "race": "Zora",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 1,
+        "description": "Laruto is the former Sage of Earth in The Wind Waker. She is a Zora, the only one of her race to appear in The Wind Waker. She was born in Zora's Domain, before Hyrule flooded. She was killed by Ganondorf after he managed to circumvent the seal of th..."
+    },
+    {
+        "name": "Puini",
+        "race": "Horse",
+        "gender": null,
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Puini is Sir Raven's horse in the Oracle of Ages manga by Akira Himekawa. Although a minor character, it is instrumental in the defeating the sorceress Veran. The horse accompanies Raven on all of his travels and resides with him in the Hidden Villag..."
+    },
+    {
+        "name": "Princess Hilda",
+        "race": "Hylian",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: A Link Between Worlds",
+        "first_appearance_year": 2013,
+        "game_count": 1,
+        "description": "Princess Hilda, also known simply as Hilda, is the princess of Lorule and a principal character in A Link Between Worlds. As she appears as a darker, brooding Lorulean version of Zelda, Hilda guides Link through the land of Lorule so he may rescue al..."
+    },
+    {
+        "name": "Spryte",
+        "race": "Fairy",
+        "gender": "Female",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Spryte is a character in The Legend of Zelda TV series. A small fairy with a pink dress, she lives in North Castle and is friends with Link and Princess Zelda. In the episode of \"Kiss'n Tell\", it is revealed that Spryte is the princess of Fairies, wi..."
+    },
+    {
+        "name": "Red Juggler",
+        "race": "Hylian",
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "The Red Juggler is a recurring character in The Legend of Zelda series. The Red Juggler goes unnamed in Ocarina of Time. "
+    },
+    {
+        "name": "Queen Seline",
+        "race": "Hylian",
+        "gender": null,
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Queen Seline is a character appearing in the The Legend of Zelda comics by Valiant Comics published by Valiant Comics. She is the monarch of the kingdom of Calatia and seems to be close friends with King Harkinian. Seline is also very fond of Princes..."
+    },
+    {
+        "name": "Phantom Zelda",
+        "race": "Phantom",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 2,
+        "description": "Phantom Zelda is a recurring character in The Legend of Zelda series. Phantom Zelda goes unnamed in Breath of the Wild, Hyrule Warriors, and Super Smash Bros. for Nintendo 3DS/Wii U. "
+    },
+    {
+        "name": "Rael",
+        "race": "Lokomo",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 1,
+        "description": "Rael is a character in Spirit Tracks. He is a member of the Lokomo race and Guardian of the Sand Realm who resides in the Sand Sanctuary. Like the rest of the Lokomo people, Rael possesses a sacred instrument, his being the shawm, which generates ene..."
+    },
+    {
+        "name": "Ralph",
+        "race": "Human",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Oracle of Ages",
+        "first_appearance_year": 2001,
+        "game_count": 1,
+        "description": "Ralph is character in Oracle of Ages. He is Nayru's childhood friend and loyal guardian. Although he is stubborn and hotheaded, rarely pondering the consequences of his own actions, he is a noble character deep down. Due to his protective nature defe..."
+    },
+    {
+        "name": "Impa",
+        "race": "Sheikah",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 8,
+        "description": "Impa  is the family name of several female members of the Sheikah, a mysterious tribe that has served and protected the Royal Family of Hyrule for many generations. Many Sheikah so far has been associated with and taken on the role of taking care of ..."
+    },
+    {
+        "name": "Charles of Moria",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Charles of Moria, also known as Sir Charles, is one of the main characters featured in The Shadow Prince. As his name suggests, he is a knight from the far-away land of Moria who traveled to the land of Hyrule in order to do good deeds, which are a r..."
+    },
+    {
+        "name": "Coliseum Receptionist",
+        "race": "Human",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: A Link Between Worlds",
+        "first_appearance_year": 2013,
+        "game_count": 2,
+        "description": "The Coliseum Receptionist, also known as Captain, is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Subrosian Smelter",
+        "race": "Subrosian",
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Oracle of Seasons",
+        "first_appearance_year": 2001,
+        "game_count": 1,
+        "description": "The Subrosian Smelter is a character in Oracle of Seasons. They blow up the obstruction which blocks the Tower of Autumn. If Link can get them Red Ore and Blue Ore, then they can make Hard Ore, which can be used to forge either the Iron Shield or the..."
+    },
+    {
+        "name": "Granny",
+        "race": "Hylian",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "Granny, also known as Anju's Grandmother, is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Maggie",
+        "race": "Hylian",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 2,
+        "description": "Maggie is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Malladus",
+        "race": "Demon",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 1,
+        "description": "Malladus is the primary antagonist of Spirit Tracks. He is a powerful demon that once terrorized the land that would eventually be home to the new kingdom of Hyrule. He was locked away beneath the altar of the Tower of Spirits by the Spirits of Good ..."
+    },
+    {
+        "name": "Professor Shikashi",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "Professor Shikashi is a recurring character in The Legend of Zelda series. Professor Shikashi goes unnamed in Ocarina of Time. "
+    },
+    {
+        "name": "Great Fairy",
+        "race": "Fairy",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 9,
+        "description": "Great Fairies, also known as Guardian Spirits, are recurring characters in The Legend of Zelda series. They are large humanoid Fairies. Their main purpose is to heal Link whenever he is wounded and will also recover his Magic Power in games that inco..."
+    },
+    {
+        "name": "Magical Sword",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 2,
+        "description": "The Magical Sword, also known as the Magic Sword, is a recurring sword in The Legend of Zelda series. The Magical Sword goes unnamed in Captain N: The Game Master. "
+    },
+    {
+        "name": "Postmistress",
+        "race": " ",
+        "gender": "Female ",
+        "first_appearance": "The Legend of Zelda: Majora's Mask",
+        "first_appearance_year": 2000,
+        "game_count": 3,
+        "description": "The Postmistress, also known as the Postmaster, is a recurring role in The Legend of Zelda series. "
+    },
+    {
+        "name": "Jim",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Majora's Mask",
+        "first_appearance_year": 2000,
+        "game_count": 2,
+        "description": "Jim is a recurring character in The Legend of Zelda series.  "
+    },
+    {
+        "name": "Keaton",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "Keaton are a recurring race of fox-like creatures in The Legend of Zelda series. "
+    },
+    {
+        "name": "Eagle",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 4,
+        "description": "Eagles are a recurring species in The Legend of Zelda series. "
+    },
+    {
+        "name": "Soldier",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: A Link to the Past",
+        "first_appearance_year": 1992,
+        "game_count": 7,
+        "description": "Soldiers, also known as Hylian Soldiers, and Hyrulean Soldiers, are the recurring group of warriors, law enforcers, and protectors in The Legend of Zelda series. Soldiers go unnamed in Majora's Mask 3D. "
+    },
+    {
+        "name": "Lorule Soldier",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: A Link Between Worlds",
+        "first_appearance_year": 2013,
+        "game_count": 1,
+        "description": "Lorule Soldiers are enemies that appear in A Link Between Worlds. They are the Lorulean counterpart to the Soldiers found dutifully protecting Hyrule Castle prior to Yuga sealing it in his dark Barrier. They appear in several different varieties. The..."
+    },
+    {
+        "name": "Lizalfos",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 4,
+        "description": "Lizalfos are recurring Enemies in The Legend of Zelda series. "
+    },
+    {
+        "name": "King Zora",
+        "race": "Zora",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: A Link to the Past",
+        "first_appearance_year": 1992,
+        "game_count": 4,
+        "description": "King Zora is a recurring character in The Legend of Zelda series. He is the leader of the Zora race. "
+    },
+    {
+        "name": "Pinkle",
+        "race": "Fairy",
+        "gender": "Female",
+        "first_appearance": "Freshly-Picked Tingle's Rosy Rupeeland",
+        "first_appearance_year": 2006,
+        "game_count": 1,
+        "description": "Pinkle is a Fairy in Freshly-Picked Tingle's Rosy Rupeeland. She is Tingle's Fairy assistant, and gives him advice throughout his adventure. She communicates with him through a large Nintendo DS-looking contraption in his house, and the Tingle Tuner ..."
+    },
+    {
+        "name": "Kane",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 1,
+        "description": "Kane is a sailor residing on Windfall Island in The Wind Waker. Kane will say different things, depending on the decorations above the gate of Windfall. He rewards Link with 50 Rupees if Link places a Postman Statue atop the gate, and another 50 Rupe..."
+    },
+    {
+        "name": "Kaepora Gaebora",
+        "race": null,
+        "gender": "Neuter",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 3,
+        "description": "Kaepora Gaebora  is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Link",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 19,
+        "description": "Link is the name shared by the main protagonists of The Legend of Zelda series. There are many incarnations of Link, each possessing the spirit of the hero, with some of them being blood-related as well. They are chosen by the Golden Goddesses to pro..."
+    },
+    {
+        "name": "Ingo",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 3,
+        "description": "Ingo is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Linebeck",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Phantom Hourglass",
+        "first_appearance_year": 2007,
+        "game_count": 2,
+        "description": "Linebeck is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Levias",
+        "race": null,
+        "gender": null,
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Levias, also known as The Great Spirit Levias, is a recurring character in The Legend of Zelda series. He is a wise, whale-like Sky Spirit who has served as the protector of the skies for ages and lives in the Thunderhead. Levias has a particular fon..."
+    },
+    {
+        "name": "Great Moblin",
+        "race": "Moblin",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Oracle of Seasons",
+        "first_appearance_year": 2001,
+        "game_count": 2,
+        "description": "The Great Moblin is a recurring Sub-Boss in The Legend of Zelda series. He is depicted as a large Moblin that leads a troop of smaller ones. "
+    },
+    {
+        "name": "Great Fairy of Wisdom",
+        "race": "Great Fairy",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "The Great Fairy of Wisdom is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Gonzo",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 3,
+        "description": "Gonzo is a recurring character in The Legend of Zelda series. He is a member of Tetra's Pirate Crew. In The Wind Waker, he is often seen at the helm of the pirate ship, shouting orders to the crew as well as steering the ship. He holds a special plac..."
+    },
+    {
+        "name": "Great Fairy of Power",
+        "race": "Great Fairy",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "The Great Fairy of Power is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Jovan",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Jovan is a character who is introduced in the Oracle of Seasons manga by Akira Himekawa. He is a member of the Troupe of Traveling Performers along with Din, Impa, Parot, Rishu, Mel and Rom. He is the boss of the troupe and is the one who offered Lin..."
+    },
+    {
+        "name": "Skull Kid",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 3,
+        "description": "Skull Kids are recurring creatures in The Legend of Zelda series. Navi implies that children who wander into the Lost Woods become Skull Kids. One first interacts with Link in Ocarina of Time, and later plays a major villainous role in Majora's Mask...."
+    },
+    {
+        "name": "Sharp",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "Sharp is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Steem",
+        "race": "Lokomo",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 1,
+        "description": "Steem is a character from Spirit Tracks. He is a member of the Lokomo race and Guardian of the Snow Realm who resides in the Snow Sanctuary. Like the rest of the Lokomo people, Steem possesses a sacred instrument, his being the biwa, which generates ..."
+    },
+    {
+        "name": "Lanmola",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 3,
+        "description": "Lanmolas, also known as Red Lanmolas, are recurring enemies and Sub-Bosses in The Legend of Zelda series. They are fast and powerful centipedes. While they were originally normal enemies, they began to serve larger roles in subsequent games in the se..."
+    },
+    {
+        "name": "Knight of Hyrule",
+        "race": null,
+        "gender": null,
+        "first_appearance": "Zelda II: The Adventure of Link",
+        "first_appearance_year": 1987,
+        "game_count": 6,
+        "description": "The Knights of Hyrule, also known as Hylian Knights, are a recurring group of characters in The Legend of Zelda series. They are the protectors of the Royal Family of Hyrule. They played a large role in A Link to the Past, in which they fought valian..."
+    },
+    {
+        "name": "Princess Zelda",
+        "race": "Hylian",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 17,
+        "description": "Zelda, traditionally Princess Zelda, is the eponymous character of The Legend of Zelda series. With the exception of Link's Awakening, Majora's Mask, and Tri Force Heroes, an incarnation of Zelda or one of her alter egos has always been one of the ce..."
+    },
+    {
+        "name": "King of Red Lions",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 2,
+        "description": "The King of Red Lions is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Yuga",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: A Link Between Worlds",
+        "first_appearance_year": 2013,
+        "game_count": 1,
+        "description": "Yuga is an evil sorcerer and one of the two primary antagonists of A Link Between Worlds. At the beginning of the game, Yuga hunts the descendants of the Seven Sages from Ocarina of Time/A Link to the Past, as well as Princess Zelda, in an attempt to..."
+    },
+    {
+        "name": "Prince Facade",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Prince Facade is a character in The Legend of Zelda TV series. He is a knight from the land of Arcadia and appears only in the episode \"The White Knight\", which is named after him. Although the prince is brave and strong, he is known to be vain and w..."
+    },
+    {
+        "name": "Spirit of Good",
+        "race": null,
+        "gender": null,
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "The Spirits of Good are deities in Spirit Tracks. They are never seen but often mentioned. They live in the heavens watching over the people of Hyrule, and they played a major role in the war that ensued between the Demon King and the Spirits of Good..."
+    },
+    {
+        "name": "Hinox",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: A Link to the Past",
+        "first_appearance_year": 1992,
+        "game_count": 7,
+        "description": "Hinox are recurring enemies and Sub-Bosses in The Legend of Zelda series. They are Cyclops-like ogres that have an affinity for Bombs, and commonly use them as weapons against Link. They typically appear as musclebound, light brown humanoids with a s..."
+    },
+    {
+        "name": "Happy Mask Salesman",
+        "race": " ",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 3,
+        "description": "The Happy Mask Salesman, also known as the Happy Mask Shop Owner, is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Knuckle",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 3,
+        "description": "Knuckle is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Grand Fairy",
+        "race": "Fairy",
+        "gender": "Female",
+        "first_appearance": "Freshly-Picked Tingle's Rosy Rupeeland",
+        "first_appearance_year": 2006,
+        "game_count": 1,
+        "description": "The Grand Fairy is a fairy who appears in Freshly-Picked Tingle's Rosy Rupeeland. She makes her home in the Third Continent's Fairy Garden, and can be found in the central fountain. Although the garden was once a beautiful place, it is now a dry dese..."
+    },
+    {
+        "name": "Poe Collector",
+        "race": " ",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "The Poe Collector is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Gyorg",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 2,
+        "description": "Gyorgs are recurring Enemies in The Legend of Zelda series. "
+    },
+    {
+        "name": "Player",
+        "race": null,
+        "gender": "Male/Female",
+        "first_appearance": "BS The Legend of Zelda",
+        "first_appearance_year": 1995,
+        "game_count": 2,
+        "description": "The Players are a pair of characters appearing in BS The Legend of Zelda and Ancient Stone Tablets, replacing Link as the central heroes of the two games. "
+    },
+    {
+        "name": "Monkey",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: A Link to the Past",
+        "first_appearance_year": 1992,
+        "game_count": 5,
+        "description": "Monkeys are a recurring species in The Legend of Zelda series. "
+    },
+    {
+        "name": "Piratian",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Oracle of Seasons",
+        "first_appearance_year": 2001,
+        "game_count": 2,
+        "description": "The Piratian are a recurring group of skeletal pirates in The Legend of Zelda series. "
+    },
+    {
+        "name": "Gorman",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Majora's Mask",
+        "first_appearance_year": 2000,
+        "game_count": 2,
+        "description": "Gorman is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Phantom",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Phantom Hourglass",
+        "first_appearance_year": 2007,
+        "game_count": 2,
+        "description": "Phantoms are recurring Enemies in The Legend of Zelda series. They serve as guardians for the Temple of the Ocean King and the Tower of Spirits in Phantom Hourglass and Spirit Tracks, respectively. "
+    },
+    {
+        "name": "Pierre",
+        "race": "Scarecrow",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "Pierre is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Ghini",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 9,
+        "description": "Ghini,  also known as Light Ghini, are recurring Enemies in The Legend of Zelda series.  "
+    },
+    {
+        "name": "Iron Knuckle",
+        "race": null,
+        "gender": null,
+        "first_appearance": "Zelda II: The Adventure of Link",
+        "first_appearance_year": 1987,
+        "game_count": 3,
+        "description": "Iron Knuckles are recurring Enemies in The Legend of Zelda series. "
+    },
+    {
+        "name": "Gorko",
+        "race": "Goron",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Skyward Sword",
+        "first_appearance_year": 2011,
+        "game_count": 1,
+        "description": "Gorko is a character in Skyward Sword. He is a traveling archaeologist Goron, who traverses the surface studying the history of the land and various devices, attempting to discern the history behind the ancient civilization. He is especially interest..."
+    },
+    {
+        "name": "Hylia",
+        "race": null,
+        "gender": null,
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Hylia , also known as The Goddess, and later Zelda, is a goddess featured in Skyward Sword. She is depicted throughout the world by both statues and imagery, often as having had angelic wings and holding a sword in her right hand. Beginning as a divi..."
+    },
+    {
+        "name": "Ikana Royal Family",
+        "race": null,
+        "gender": null,
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "The Ikana Royal Family, also known as Ikana's Royal Family, was the ruling body of Ikana Kingdom in Majora's Mask. They once governed the Ikana region from the Ancient Castle of Ikana. The King of Ikana and head of the Ikana monarchy, Igos du Ikana, ..."
+    },
+    {
+        "name": "Niko",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: The Wind Waker",
+        "first_appearance_year": 2003,
+        "game_count": 4,
+        "description": "Niko is a recurring character in The Legend of Zelda series. He is a member of Tetra's Pirate Crew. He is the skivvy and the lowest-ranking crew member on board Tetra's Ship, often having to deal with humiliating tasks like washing the dirty underpan..."
+    },
+    {
+        "name": "Nightmare",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Link's Awakening",
+        "first_appearance_year": 1993,
+        "game_count": 1,
+        "description": "The Nightmares are the main antagonists of Link's Awakening. They are monsters that invaded the Wind Fish's dream world of Koholint. They seek to rule the island by preventing the Wind Fish from ever being awoken with the Instrument of the Sirens. To..."
+    },
+    {
+        "name": "Shadow Link",
+        "race": " ",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Four Swords Adventures",
+        "first_appearance_year": 2004,
+        "game_count": 3,
+        "description": "Shadow Links are recurring enemies and Sub-Bosses in The Legend of Zelda series. Shadow Link is dark reflection of Link. Hyrule Historia states that the evil thoughts and resentment of Ganondorf, who had been killed by an earlier incarnation of Link ..."
+    },
+    {
+        "name": "Zant",
+        "race": "Twili",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Twilight Princess",
+        "first_appearance_year": 2006,
+        "game_count": 1,
+        "description": "Zant  is one of two main antagonists in Twilight Princess. He is the self-proclaimed King of Twilight, although Midna claims he is the King of Shadows. He is a member of the Twili who usurps the throne of the Twilight Realm from Midna before the even..."
+    },
+    {
+        "name": "Greenbeard",
+        "race": null,
+        "gender": "Unknown",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Greenbeard is a character featured in The Crystal Trap. He is the spirit of the trees and woods and serves as the guardian of the Forest. Although his appearance is brief in the book, Greenbeard plays an important role in the game since he is the onl..."
+    },
+    {
+        "name": "Great Fairy of Courage",
+        "race": "Great Fairy",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "The Great Fairy of Courage is a recurring character in The Legend of Zelda series. "
+    },
+    {
+        "name": "Kenzo",
+        "race": "Human",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Spirit Tracks",
+        "first_appearance_year": 2009,
+        "game_count": 1,
+        "description": "Kenzo is a character in Spirit Tracks. He lives alone in an isolated abode within the Snow Realm. He is a bridge worker and, like many characters and objects in Spirit Tracks, Kenzo's services are not necessary until later, once Link meets with Lineb..."
+    },
+    {
+        "name": "Elrora",
+        "race": "Watarara",
+        "gender": null,
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Elrora is the tribal leader of the Watarara tribe that appears in the bonus chapter Rouru of the Watara in the Ocarina of Time manga by Akira Himekawa. She bears the form of a dove, and is a strict, but caring leader. She has a son named Rouru, who i..."
+    },
+    {
+        "name": "Skeleton",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Ocarina of Time",
+        "first_appearance_year": 1998,
+        "game_count": 2,
+        "description": "Skeletons, also known as Fallen Adventurers, are recurring Objects in The Legend of Zelda series. "
+    },
+    {
+        "name": "Oshus",
+        "race": "Deity (Appears ",
+        "gender": "Male",
+        "first_appearance": "The Legend of Zelda: Phantom Hourglass",
+        "first_appearance_year": 2007,
+        "game_count": 1,
+        "description": "Oshus, also known as the Ocean King, is a character in Phantom Hourglass. He watches over the World of the Ocean King. He is the creator of the Phantom Hourglass. His true form is that of a large white whale, but he initially appears to Link as an ol..."
+    },
+    {
+        "name": "Sign",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: A Link to the Past",
+        "first_appearance_year": 1992,
+        "game_count": 6,
+        "description": "Signs, also known as Signposts, are recurring Objects in The Legend of Zelda series. Signs go unnamed in Majora's Mask 3D, The Wind Waker, and Twilight Princess. "
+    },
+    {
+        "name": "Shopkeeper",
+        "race": null,
+        "gender": null,
+        "first_appearance": "The Legend of Zelda: Link's Awakening",
+        "first_appearance_year": 1993,
+        "game_count": 2,
+        "description": "Shopkeepers are recurring characters in The Legend of Zelda series. "
+    },
+    {
+        "name": "Old Woman",
+        "race": "Hylian",
+        "gender": "Female",
+        "first_appearance": "The Legend of Zelda",
+        "first_appearance_year": 1986,
+        "game_count": 2,
+        "description": "Old Women are recurring characters in The Legend of Zelda series. "
+    },
+    {
+        "name": "King of Hyrule",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "Zelda II: The Adventure of Link",
+        "first_appearance_year": 1987,
+        "game_count": 1,
+        "description": "The King of Hyrule was a wise ruler of the kingdom of Hyrule long in its past that was featured in the backstory of The Adventure of Link. He was the last in a long line of Kings who wielded the entire Triforce after Link reclaimed it in A Link Betwe..."
+    },
+    {
+        "name": "King Harkinian",
+        "race": "Hylian",
+        "gender": "Male",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "King Harkinian is a recurring character in The Legend of Zelda series. In all his appearances, he is a King of Hyrule and father of Princess Zelda. He appears in The Legend of Zelda TV series, The Legend of Zelda comics by Valiant Comics, and the vid..."
+    },
+    {
+        "name": "Geetchee",
+        "race": null,
+        "gender": "Male",
+        "first_appearance": "Unknown",
+        "first_appearance_year": null,
+        "game_count": 0,
+        "description": "Geetchee is a character featured in The Crystal Trap. Described as a \"thin, scraggly, blue-furred creature,\" Geetchee is a mossunger who Princess Zelda first meets when she travels through the Swamp. The princess finds Geetchee trying to fish somethi..."
+    }
+]
