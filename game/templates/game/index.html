@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background-color: #1e1e1e; color: #fff; padding: 2rem; }
+        .search-container { margin-bottom: 2rem; }
+        input { padding: 10px; width: 300px; font-size: 16px; border-radius: 4px; border: 1px solid #555; background: #333; color: white; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #538d4e; color: white; border: none; border-radius: 4px; margin-left: 10px;}
+
+        .board { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .row { display: flex; gap: 10px; }
+        .tile {
+            width: 100px; height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: #333; border: 2px solid #555; border-radius: 8px; font-weight: bold; font-size: 14px;
+        }
+        .header-row .tile { height: 30px; background: transparent; border: none; color: #aaa; }
+
+        .match { background-color: #538d4e; border-color: #538d4e; }
+        .miss { background-color: #3a3a3c; border-color: #3a3a3c; }
+        .higher { background-color: #b59f3b; border-color: #b59f3b; }
+        .lower { background-color: #b59f3b; border-color: #b59f3b; }
+    </style>
+</head>
+<body>
+    <h1>⚔️ {{ title }}</h1>
+    <p>Guess the daily Zelda character!</p>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search a character...">
+        <button type="button">Guess</button>
+    </div>
+
+    <div class="board">
+        <div class="row header-row">
+            <div class="tile">Name</div>
+            <div class="tile">Race</div>
+            <div class="tile">Gender</div>
+            <div class="tile">Role</div>
+            <div class="tile">First App.</div>
+            <div class="tile">Games</div>
+        </div>
+
+        <div class="row">
+            <div class="tile">{{ guess_raw.name }}</div>
+            <div class="tile {{ recent_guess.race }}">{{ guess_raw.race }}</div>
+            <div class="tile {{ recent_guess.gender }}">{{ guess_raw.gender }}</div>
+            <div class="tile {{ recent_guess.role }}">{{ guess_raw.role }}</div>
+
+            <div class="tile {{ recent_guess.first_appearance }}">
+                {{ guess_raw.first_appearance_year }}
+                {% if recent_guess.first_appearance == 'higher' %} ⬆️
+                {% elif recent_guess.first_appearance == 'lower' %} ⬇️ {% endif %}
+            </div>
+
+            <div class="tile {{ recent_guess.game_count }}">
+                {{ guess_raw.game_count }}
+                {% if recent_guess.game_count == 'higher' %} ⬆️
+                {% elif recent_guess.game_count == 'lower' %} ⬇️ {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -29,16 +29,16 @@ characters_raw.json + games.json  <-- Raw joined data
 Manual curation (CSV)             <-- Human-in-the-loop (domain modeling)
      |
      v
-zelda_characters_final.json       <-- Clean, validated, ready to load
+zelda_characters_final.json       <-- Clean, validated, ready to load (planned)
      |
      v
-Django management command          <-- Loads into Postgres
+Django management command          <-- e.g. load_characters (planned; idempotent upsert)
      |
      v
-PostgreSQL                         <-- Authoritative data store
+SQLite (local dev) / PostgreSQL (production)   <-- ORM models in game app
      |
      v
-Django views + templates           <-- Game logic + server-rendered UI
+Django views + templates           <-- Game logic + server-rendered UI (vertical slice live)
 ```
 
 ---
@@ -48,12 +48,12 @@ Django views + templates           <-- Game logic + server-rendered UI
 | Layer             | Technology                |
 |-------------------|---------------------------|
 | Language          | Python 3.12               |
-| Web Framework     | Django                    |
-| Database          | PostgreSQL                |
+| Web Framework     | Django 6.x                |
+| Database          | **SQLite** (local dev, zero config) · **PostgreSQL** (production target) |
 | Frontend          | Django Templates (server-rendered) |
 | Data Source       | [Zelda Fan API](https://zelda.fanapis.com) ([docs](https://docs.zelda.fanapis.com/docs/)) |
 
-**Not using**: Angular, React, or any JS framework. Frontend is Django templates only.
+**Not using**: Angular, React, or a separate SPA. UI is Django templates first; **HTMX** (optional later) still fits a server-rendered architecture if you want snappier guesses without React.
 
 ---
 
@@ -113,8 +113,8 @@ Each guess shows feedback across these traits:
 |-----------------------|---------|------------------------------------|
 | id                    | serial  | PK                                 |
 | name                  | text    | e.g., "Midna"                      |
-| race                  | text    | e.g., "Twili"                      |
-| gender                | text    | e.g., "Female"                     |
+| race                  | text (nullable) | API often null; ORM allows blank |
+| gender                | text (nullable) | API often null; ORM allows blank |
 | role                  | text    | e.g., "Ally" (manually curated)    |
 | first_appearance_year | integer | Denormalized for fast queries      |
 | game_count            | integer | Denormalized for fast queries      |
@@ -148,26 +148,26 @@ Each guess shows feedback across these traits:
 - Reads `data/characters_raw.json` and runs cheap signal checks on each entry.
 - Flags entries that look like generic roles, items, enemies, or concepts — does **not** remove anything.
 - Heuristics include: proper noun check, generic role pattern matching, enemy/item keyword detection, missing race/gender.
-- Output: `data/characters_flagged.csv` with `auto_flag`, `flag_reason`, and a blank `keep` column for human review.
+- Output: `data/characters_flagged.csv` with `auto_flag`, `flag_reason`, `keep_suggested`, and columns for human review.
 
-### Step 3: Manual Curation (human-in-the-loop)
-- Open `data/characters_flagged.csv` in a spreadsheet.
-- Review flagged entries, fill in the `keep` column (`yes`/`no`).
-- **Fill** null `race` and `gender` values.
-- **Add** `role` field (Hero / Villain / Ally / NPC — does not exist in API).
-- **Select** final ~80-100 roster.
-- Output: `data/characters_curated.csv`.
+### Step 3: Manual Curation (human-in-the-loop) — **complete for v1 roster grading**
+- File: `data/characters_flagged.csv` (spreadsheet-friendly).
+- Every row has **`keep_suggested`**, final **`keep`** (`yes`/`no`), and **`tier`** (`S` / `A` / `B` / `X`).
+- **Tier rubric (summary):** `S` = franchise pillars; `A` = strong side/story; `B` = depth/niche; `X` = exclude from the guessing pool.
+- Policy examples: CDI-only games (*Link: The Faces of Evil*, *Zelda: The Wand of Gamelon*) excluded; aggregated **Link** split into separate titled rows (e.g. Hero of Time, Hero of the Wild).
+- **Still to do in data:** fill null `race`/`gender` where needed for gameplay, add **`role`** (Hero / Villain / Ally / NPC — not in API), then export **`keep=yes`** to `data/characters_curated.csv` for the load pipeline.
 
 ### Step 4: Validate & Merge (automated)
 - Python script reads `data/characters_curated.csv` + `data/characters_raw.json`.
 - Validates no nulls in required fields, enum values are valid.
 - Output: `data/zelda_characters_final.json`.
 
-### Step 5: Load into Database (Django management command)
-- Reads `data/zelda_characters_final.json`.
-- Upserts games, inserts characters, inserts character_games join rows.
-- Computes and stores derived fields.
-- Repeatable and idempotent — can wipe and reload anytime.
+### Step 5: Load into Database (Django management command) — **not implemented yet**
+- **Target input:** `data/zelda_characters_final.json` (produced after Step 4 merge script exists).
+- **Command location (Django convention):** `game/management/commands/<name>.py` (e.g. `load_characters.py`), with `management/` and `commands/` packages each containing an `__init__.py`.
+- **Behavior:** idempotent upserts (e.g. `update_or_create` on a stable key such as API id or slug—not name alone if collisions exist); create **`Game`** rows and wire **`Character.games`** M2M from resolved appearances.
+- **Do not** anchor the loader to legacy `zelda_data_deep.json` unless you explicitly revive that file; canonical pipeline is **raw JSON → CSV curation → final JSON → DB**.
+- Local DB file **`db.sqlite3`** is gitignored; run `migrate` after clone.
 
 ### Key Principle
 > All manual curation happens in files (version-controlled), never directly in the database.
@@ -207,27 +207,28 @@ Endpoint: `https://zelda.fanapis.com/api/characters`
 
 ### Request Cycle
 
-1. **GET `/hyruledle/`** — Django fetches today's target, loads character list for autocomplete, renders template with empty guess table.
-2. **POST `/hyruledle/guess/`** — Player submits a character name. Django loads the guess, compares traits against target, stores guess in session, re-renders page with feedback row added.
+1. **GET `/`** — Django fetches today's target, loads character list for autocomplete, renders template (today: static vertical slice at project root URL).
+2. **POST `/guess/`** (planned) — Player submits a character name. Django loads the guess, compares traits against target, stores guess in session, re-renders page with feedback row added.
 
 ### Trait Comparison Logic (lives in Python, not templates)
 
 ```python
-def compare_characters(guess, target):
+# String feedback for templates: "higher" / "lower" mean the **correct answer** is
+# greater or less than the guess (guess is too low → "higher"), matching the current index view.
+def compare_traits(guess, target):
+    def cmp_int(g, t):
+        if g is None or t is None:
+            return "miss"  # or handle unknowns explicitly
+        if g == t:
+            return "match"
+        return "higher" if g < t else "lower"
+
     return {
-        "race": guess.race == target.race,
-        "gender": guess.gender == target.gender,
-        "role": guess.role == target.role,
-        "first_appearance": (
-            "higher" if guess.first_appearance_year > target.first_appearance_year
-            else "lower" if guess.first_appearance_year < target.first_appearance_year
-            else "match"
-        ),
-        "game_count": (
-            "higher" if guess.game_count > target.game_count
-            else "lower" if guess.game_count < target.game_count
-            else "match"
-        ),
+        "race": "match" if guess.race == target.race else "miss",
+        "gender": "match" if guess.gender == target.gender else "miss",
+        "role": "match" if guess.role == target.role else "miss",
+        "first_appearance": cmp_int(guess.first_appearance_year, target.first_appearance_year),
+        "game_count": cmp_int(guess.game_count, target.game_count),
     }
 ```
 
@@ -244,35 +245,35 @@ Templates just render the comparison result with colors/arrows.
 
 ---
 
-## Project Structure (Planned)
+## Project structure (current)
 
 ```
 Hyruledle/
 ├── README.md
-├── ingest_zelda_api.py          # Stage 1: Raw API ingestion (no filtering)
-├── classify_characters.py       # Stage 2: Heuristic auto-classification
+├── manage.py                    # Django entrypoint
+├── requirements.txt             # pip freeze (Django, requests, …)
+├── ingest_zelda_api.py          # Stage 1: raw API → data/*.json
+├── classify_characters.py       # Stage 2: raw → characters_flagged.csv
 ├── data/
-│   ├── games.json               # Raw games from API
-│   ├── characters_raw.json      # Raw characters with resolved games
-│   ├── characters_flagged.csv   # Auto-classified, ready for human review
-│   ├── characters_curated.csv   # Manual curation file (keep/cut decisions)
-│   └── zelda_characters_final.json  # Clean, validated, ready to load
-├── hyruledle/                   # Django project (future)
-│   ├── manage.py
-│   ├── hyruledle/
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── ...
-│   └── game/                    # Django app
-│       ├── models.py
-│       ├── views.py
-│       ├── templates/
-│       └── management/
-│           └── commands/
-│               └── load_characters.py
-├── venv/
-└── requirements.txt
+│   ├── games.json               # Raw games (regenerate with ingest)
+│   ├── characters_raw.json      # Raw characters (regenerate with ingest)
+│   └── characters_flagged.csv   # Graded roster (keep / tier); export curated subset next
+├── hyruledle/                   # Django **project** package
+│   ├── settings.py              # SQLite default; INSTALLED_APPS includes game
+│   ├── urls.py                  # '' → game.views.index
+│   └── wsgi.py / asgi.py
+├── game/                        # Django **app**
+│   ├── models.py                # Game, Character (+ M2M games)
+│   ├── views.py                 # Trait board (hardcoded slice until DB wired)
+│   ├── admin.py
+│   ├── templates/game/index.html
+│   └── migrations/
+│       └── 0001_initial.py
+├── venv/                        # Not committed
+└── db.sqlite3                   # Local DB after migrate (gitignored)
 ```
+
+**Planned additions:** `data/characters_curated.csv`, `data/zelda_characters_final.json`, `game/management/commands/load_characters.py`, `daily_targets` model (or equivalent).
 
 ---
 
@@ -283,8 +284,8 @@ Hyruledle/
 python3 -m venv venv
 source venv/bin/activate
 
-# Install dependencies
-pip install requests
+# Install dependencies (web app + ingestion)
+pip install -r requirements.txt
 
 # Stage 1: Fetch raw data from Zelda Fan API
 python3 ingest_zelda_api.py
@@ -292,21 +293,41 @@ python3 ingest_zelda_api.py
 # Stage 2: Run heuristic classifier
 python3 classify_characters.py
 
-# Stage 3: Open data/characters_flagged.csv and curate manually
+# Stage 3: Export graded keep=yes rows into curated roster
+python3 export_curated.py
+# Optional tighter pool by tier:
+python3 export_curated.py --tiers S,A
+
+# Django: apply migrations and run dev server
+python manage.py migrate
+python manage.py runserver
+# → http://127.0.0.1:8000/  (trait board)  ·  http://127.0.0.1:8000/admin/  (after createsuperuser)
 ```
 
 ---
 
 ## Current Status
 
+**Data (as of last README update)**  
+- `data/characters_flagged.csv`: **1009** character rows, all graded — **`keep`** + **`tier`** on every row.
+- **285** rows with **`keep=yes`** (candidate guessing-pool entries); **724** excluded (**`keep=no`**, **`tier=X`**). The game design target is still **~50–150** names — narrow this subset by tier and/or manual pass when exporting to `characters_curated.csv`.
+- **Tier distribution (all rows):** S 26 · A 73 · B 186 · X 724.
+
+**Done**
 - [x] Virtual environment setup
-- [x] Raw ingestion script (`ingest_zelda_api.py`) — games fetch + full character fetch + appearance resolution
-- [x] Heuristic classifier (`classify_characters.py`) — auto-flags generic roles, items, enemies, concepts
-- [ ] Run full pipeline and generate `characters_flagged.csv`
-- [ ] Manual curation pass (spreadsheet review of flagged CSV)
-- [ ] Validation/merge script
-- [ ] Django project scaffolding
-- [ ] Database schema + management command
-- [ ] Game views + templates
-- [ ] Daily target selection logic
-- [ ] UI polish
+- [x] Raw ingestion (`ingest_zelda_api.py`) — games + characters + appearance resolution → `data/games.json`, `data/characters_raw.json`
+- [x] Heuristic classifier (`classify_characters.py`) → `data/characters_flagged.csv`
+- [x] Manual curation pass — **`keep`**, **`tier`**, and review of `keep_suggested` complete on the flagged CSV
+
+**Next (implementation order)**
+- [ ] Export `data/characters_curated.csv` from **`characters_flagged.csv`** (`keep=yes`, optional **tier** filter toward ~50–150 names)
+- [ ] Validation / merge script → **`data/zelda_characters_final.json`** (stable ids, resolved years, **role** filled where required)
+- [x] Django project — `manage.py`, **`hyruledle/`** settings/urls, **`game`** app, **SQLite** dev DB
+- [x] ORM models — **`Game`**, **`Character`** (nullable **`race`** / **`gender`**), **`Character.games`** M2M; **`game`** registered in admin
+- [x] First UI — **`/`** hardcoded Link vs Midna trait board (`game/templates/game/index.html`)
+- [ ] **`game/management/commands/load_characters.py`** — read final JSON, upsert **games + characters + M2M** (idempotent)
+- [ ] **POST** guess endpoint, session or DB guesses, **daily target** model
+- [ ] Search / autocomplete (datalist or server partials); optional **HTMX** after plain form POST works
+- [ ] Production: **PostgreSQL**, static files, `DEBUG=False` checklist
+
+**Run locally:** `source venv/bin/activate` → `python manage.py runserver` → [http://127.0.0.1:8000/](http://127.0.0.1:8000/)

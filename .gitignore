@@ -1,6 +1,7 @@
 venv/
 __pycache__/
 *.pyc
+db.sqlite3
 
 # Generated data files (re-generate with pipeline scripts)
 data/games.json
